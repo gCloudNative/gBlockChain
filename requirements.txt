@@ -1,6 +1,9 @@
 # Flask
 Flask==0.12.2
 
+# Database
+redis==2.10.6
+
 # Deploy
 gunicorn==19.4.1
 gevent==1.2.2
