@@ -4,6 +4,10 @@ Flask==0.10.1
 # Deploy
 gunicorn==19.4.1
 gevent==1.3a1
+eventlet==0.22.1
+tornado==5.0b1
+
+
 
 
 
