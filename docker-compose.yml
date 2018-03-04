@@ -1,4 +1,5 @@
-version: '2'
+version: '2.3'
+
 services:
   gblockchain:
     build: ./
@@ -6,15 +7,38 @@ services:
       - "5000:5000"
     links:
       - redis
-  # environment:
-  #   - APP_ENVIRONMENT=DEVELOPMENT
-  #   - DEBUG=True
-  # volumes:
-  #   - ./logs:/logs:rw
+    environment:
+      - APP_ENVIRONMENT=DEVELOPMENT
+      - DEBUG=True
+    volumes:
+      - ./data_logs:/logs:rw
+    networks:
+        - backend
+
   redis:
-    image: redis:latest
+    image: redis:3.2.11-alpine
     restart: always
     ports:
-      - "6379:6379"
+      - "6379"
+    networks:
+      - backend
+
+  mysql:
+    image: mysql:5.7.21
+    restart: always
+    ports:
+      - "3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=blockchain
+      - MYSQL_USER=flask
+      - MYSQL_PASSWORD=flask
+    volumes:
+      - ./data_mysql:/var/lib/mysql
+    networks:
+      - backend
 
 
+networks:
+  backend:
+    driver: bridge
