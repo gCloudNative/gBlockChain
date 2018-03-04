@@ -1,4 +1,5 @@
-FROM python:2.7.14-alpine3.6
+#FROM python:2.7.14-alpine3.6
+FROM python:3.6.4-alpine3.6
 
 MAINTAINER Yang Sen <nuaays@gmail.com>
 
@@ -16,7 +17,7 @@ COPY ./requirements.txt /requirements.txt
 
 RUN apk --update add gcc libc-dev tzdata supervisor net-tools curl tree drill && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo $TZ > /etc/timezone && \
-    pip install -r /requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    pip3 install -r /requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
     rm -rf /var/cache/apk/* 
 
 RUN mkdir /instance /data /logs
