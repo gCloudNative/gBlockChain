@@ -13,7 +13,7 @@ RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.6/main/" > /etc/apk/repo
     echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.6/community/" >> /etc/apk/repositories
 
 COPY ./requirements.txt /requirements.txt
-
+COPY ./pip.conf /etc/pip.conf
 
 RUN apk --update add gcc libc-dev tzdata supervisor net-tools curl tree drill && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo $TZ > /etc/timezone && \
