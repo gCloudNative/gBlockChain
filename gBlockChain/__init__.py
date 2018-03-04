@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
+if sys.version_info[0] == 2:
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
+if sys.version_info[0] == 3:
+    import imp
+    imp.reload(sys)
 
 
 from flask import Flask
