@@ -1,0 +1,20 @@
+version: '2'
+services:
+  gblockchain:
+    build: ./
+    ports:
+      - "5000:5000"
+    links:
+      - redis
+  # environment:
+  #   - APP_ENVIRONMENT=DEVELOPMENT
+  #   - DEBUG=True
+  # volumes:
+  #   - ./logs:/logs:rw
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+
+
