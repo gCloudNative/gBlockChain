@@ -1,11 +1,11 @@
 # Flask
-Flask==0.10.1
+Flask==0.12.2
 
 # Deploy
 gunicorn==19.4.1
-gevent==1.3a1
+gevent==1.2.2
 eventlet==0.22.1
-tornado==5.0b1
+tornado==4.5.3
 
 
 
