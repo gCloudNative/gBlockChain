@@ -19,7 +19,6 @@ manager.add_command('clean', Clean())
 manager.add_command('server', Server(host=app.config.get('HOST', '0.0.0.0'), port=app.config.get('PORT', 5000)))
 manager.add_command('dev', Server(host=app.config.get('HOST', '0.0.0.0'), port=app.config.get('PORT', 5000), use_debugger=True))
 manager.add_command("shell", Shell(make_context=_make_context))
-#manager.add_command("gunicorn", GunicornServer())
 
 if __name__ == '__main__':
     manager.run()
