@@ -68,8 +68,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=blockchain
-      - MYSQL_USER=flask
-      - MYSQL_PASSWORD=flask
+      - MYSQL_USER=bc
+      - MYSQL_PASSWORD=bc
     #volumes:
     #  - ./data_mysql:/var/lib/mysql
     networks:
