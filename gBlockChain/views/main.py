@@ -26,10 +26,17 @@ def status():
     return "200"
     
 
+@view(bp_html, '/users', None, methods=['GET'])
+def get_users():
+    users = User.all()
+    print(users)
+    return ""
+
 @view(bp, '/users', render_json, methods=['GET'])
 def get_users():
     users = User.all()
     print(users)
-    return { 'userTotal': len(users) }
+    return {}
+
 
 
