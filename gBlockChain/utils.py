@@ -57,6 +57,7 @@ def load_module_dynamic(module):
 
 def render_json(result):
     json_result = json.dumps(result, default=json_default_format)
+    print(json_result)
     return Response(json_result,  mimetype='application/json')
 
 
@@ -88,7 +89,7 @@ def view(instance, url, renderer=None, *args, **kwargs):
             if request.method in ['POST', 'PUT']:
                 try:
                     _params = json.loads(request.data)
-                    # print "_params", _params
+                    #print( "_params", _params )
                 except ValueError as e:
                     # _form = request.form
                     # _params = {k: _form[k] for k in _form}
