@@ -4,7 +4,7 @@ services:
   gblockchain:
     build: ./
     ports:
-     - "127.0.0.1:80:5000"
+     - "127.0.0.1:5000:5000"
     links:
       - redis
       - mysql
@@ -29,7 +29,7 @@ services:
     image: nginx:1.13.9-alpine
     restart: always
     ports:
-      - "5000:80"
+      - "80:80"
     links:
       - gblockchain:backend
     depends_on:
@@ -40,7 +40,7 @@ services:
     networks:
       - backend
     healthcheck:
-      test: ["CMD", "curl", "-s", "-f", "http://backend:5000/health"]
+      test: ["CMD", "wget", "-q", "http://backend:5000/health", "-O", "/dev/null"]
       interval: 30s
       timeout: 10s
       retries: 3
