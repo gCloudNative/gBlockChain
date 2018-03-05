@@ -2,7 +2,12 @@ version: '2.3'
 
 services:
   gblockchain:
-    build: ./
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - APP_PORT=5000
+        - TZ=Asia/Shanghai
     ports:
      - "127.0.0.1:5000:5000"
     links:
@@ -65,8 +70,8 @@ services:
       - MYSQL_DATABASE=blockchain
       - MYSQL_USER=flask
       - MYSQL_PASSWORD=flask
-    volumes:
-      - ./data_mysql:/var/lib/mysql
+    #volumes:
+    #  - ./data_mysql:/var/lib/mysql
     networks:
       - backend
 
