@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from gBlockChain.models import *
 
 class NewSQLAlchemy(SQLAlchemy):
     def init_app(self, app):
         super(NewSQLAlchemy, self).init_app(app)
-        from gBlockChain.models import *
         self.create_all()
 
+
 extension = NewSQLAlchemy()
+

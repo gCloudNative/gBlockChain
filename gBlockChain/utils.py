@@ -2,7 +2,7 @@
 
 from functools import wraps
 from flask import request, render_template, session
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from werkzeug.wrappers import Response
 from werkzeug import BaseResponse
 import json, re, datetime, time, socket, itertools, requests
@@ -86,11 +86,10 @@ def view(instance, url, renderer=None, *args, **kwargs):
 
             # pass post data to kwargs.
             if request.method in ['POST', 'PUT']:
-
                 try:
                     _params = json.loads(request.data)
                     # print "_params", _params
-                except ValueError, e:
+                except ValueError as e:
                     # _form = request.form
                     # _params = {k: _form[k] for k in _form}
                     _params = None
@@ -175,7 +174,7 @@ class JSONRPCClient(object):
 
         try:
             r = requests.post(self.url, json=dict(self.data, method=method, params=params), timeout=3)
-        except Exception, e:
+        except Exception as e:
             raise CallError(str(e), url=self.url)
 
         resp = r.json()
@@ -185,6 +184,15 @@ class JSONRPCClient(object):
         else:
             return resp['result']
 
+
+def current_username():
+    try:
+        username = session.get('CAS_USERNAME', {}).get('username')
+    except RuntimeError:
+        username = ""
+
+    return username
+    
 
 def lazyproperty(fn):
     attr_name = '_lazy_' + fn.__name__
