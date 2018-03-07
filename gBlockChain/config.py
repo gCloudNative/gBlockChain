@@ -11,9 +11,9 @@ APP_NAME = 'gBlockChain'
 APP_LOG = '/tmp/{}.log'.format(APP_NAME)
 
 
-#SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '../data/app.db')
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@mysql:3306/blockchain?charset=utf8'
-# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@127.0.0.1:13306/blockchain?charset=utf8'
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '../data/app.db')
+# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@mysql:3306/blockchain?charset=utf8'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@127.0.0.1:13306/blockchain?charset=utf8'
 SQLALCHEMY_COMMIT_ON_TEARDOWN=True
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = False
@@ -33,3 +33,14 @@ CACHE_REDIS_HOST=REDIS_HOST #'redis'
 CACHE_REDIS_PORT=REDIS_PORT
 CACHE_REDIS_DB='1'
 CACHE_REDIS_PASSWORD=''
+
+
+
+
+# APP BRAND SETTING FOR WEB
+APP_BRAND=u'区块链部署管理平台'
+APP_BRAND_ALT=u'区块链云平台'
+APP_AUTHOR=u'平台框架组'
+APP_AUTHOR_EMAIL=["nuaays@gmail.com"]
+APP_INTRO_CONTENT=u"基于以太坊的区块链一键部署管理平台"
+
