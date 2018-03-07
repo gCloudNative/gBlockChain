@@ -76,7 +76,7 @@
             {% include "_topbar.html" %}
             {# Second Navbar #}
             {% if config.WEB_SECONDBAR_ENABLED %}
-            {% include "_secondbar.html" %}
+                {% include "_secondbar.html" %}
             {% endif %}
 
         </div>
@@ -92,8 +92,9 @@
         {# Main Navbar #}
         {% include "_topbar.html" %}
         {# Second Navbar #}
-        {% include "_secondbar.html" %}
-
+        {% if config.WEB_SECONDBAR_ENABLED %}
+            {% include "_secondbar.html" %}
+        {% endif %}
 {% endif %}
 
         <!-- Page header -->
