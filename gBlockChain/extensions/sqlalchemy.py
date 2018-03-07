@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask_sqlalchemy import SQLAlchemy
-from gBlockChain.models import *
+# from gBlockChain.models import *
 
 class NewSQLAlchemy(SQLAlchemy):
     def init_app(self, app):
