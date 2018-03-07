@@ -1,7 +1,6 @@
-*.py linguist-language=python
-*           text=auto
-*.txt       text
-*.jpg       -text
-*.vcproj    text eol=crlf
-*.sh        text eol=lf
-*.py        eol=lf
+*.py linguist-language=Python
+*.js linguist-language=Python
+*.css linguist-language=Python
+*.html linguist-language=Python
+*.yml linguist-language=Python
+*.conf linguist-language=Python
