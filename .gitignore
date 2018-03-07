@@ -8,7 +8,7 @@ __pycache__/
 hosts
 sync.sh
 data_logs
-
+gBlockChain/static/gen
 
 # C extensions
 *.so
