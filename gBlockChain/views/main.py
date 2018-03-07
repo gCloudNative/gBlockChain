@@ -13,9 +13,13 @@ bp = Blueprint('main', __name__, url_prefix='/api/v1')
 bp_html = Blueprint('main_html', __name__, url_prefix='')
 
 
-@view(bp_html, '/', None)
+@view(bp_html, '/', render_html('index.html'), methods=['GET'])
 def index():
-    return "Hello World!"
+    return dict(title=u"区块链部署管理平台" )
+
+@view(bp_html, '/test', render_html('index_blank.html'), methods=['GET'])
+def test():
+    return dict(title=u"区块链部署管理平台" )
     
 @view(bp_html, '/health', None)
 def health():
