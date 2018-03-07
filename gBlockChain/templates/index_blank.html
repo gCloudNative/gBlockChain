@@ -1,0 +1,30 @@
+{% extends "_layout.html" %}
+
+{% block title %}
+    {{ pagetitle or config.APP_BRAND }}
+{% endblock %}
+
+{% block body %}
+
+    <!-- Table components -->
+    <div class="panel panel-flat">
+
+        <div class="panel-heading">
+            <h5 class="panel-title">Table components</h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            Table below contains different examples of components, that can be used in the table: form components, interface components, buttons etc. All of them are adapted for different cases, such as multiple elements in the same table cell. These components support all available sizes and styles. Also added a few examples of sparklines based on <code>sparklines.js</code> library. For more advanced sparklines <code>D3.js</code> library suits best
+        </div>
+
+    </div>
+    <!-- /table components -->
+
+{% endblock %}

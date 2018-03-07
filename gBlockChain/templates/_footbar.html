@@ -1,0 +1,24 @@
+	<!-- Footer -->
+	<div class="navbar navbar-default navbar-fixed-bottom footer">
+		<ul class="nav navbar-nav visible-xs-block">
+			<li>
+                <a class="text-center collapsed" data-toggle="collapse" data-target="#footer"><i class="icon-circle-up2"></i></a>
+            </li>
+		</ul>
+
+		<div class="navbar-collapse collapse" id="footer">
+			<div class="navbar-text">
+				&copy; 2018.
+                <a href="#" class="navbar-link">{{ config.APP_BRAND_ALT }}</a>
+                By
+                <a href="#" class="navbar-link" target="_blank">{{ config.APP_AUTHOR }}</a>
+			</div>
+
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+                    <li><a href="mailto:{{ config.APP_AUTHOR_EMAIL[0] }}?cc={{ ','.join(config.APP_AUTHOR_EMAIL[1:]) }}&bcc={{ config.APP_AUTHOR_EMAIL[1] }}&subject=HELP-区块链部署">联系我们</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /footer -->

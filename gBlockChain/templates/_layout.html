@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% include "_layout_head_meta.html" %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+        <link href="{{url_for('static',filename='images/favicon_1.ico')}}" rel="shortcut icon" >
+
+        {% if config.WEB_STATIC_COMPRESSED %}
+            {% assets "css_all" %}
+            <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+            {% endassets %}
+        {% else %}
+            <link href="{{url_for('static',filename='css/icons/icomoon/icomoon_styles.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{url_for('static',filename='css/core.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{url_for('static',filename='css/components.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{url_for('static',filename='css/colors.css')}}" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript" src="{{url_for('static',filename='js/core/libraries/jquery.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/core/libraries/bootstrap.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/loaders/blockui.min.js')}}"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='js/core/libraries/jquery_ui/core.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/core/libraries/jquery_ui/interactions.min.js')}}"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/styling/uniform.min.js')}}"></script>
+            {#        <script src="http://libs.cdnjs.net/switchery/0.8.2/switchery.js" />#}
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/styling/switchery.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/styling/uniform.min.j')}}s"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/inputs/touchspin.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/editable/editable.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/selects/select2.min.j')}}s"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/selects/selectboxit.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/forms/selects/bootstrap_select.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/tables/datatables/datatables.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/tables/datatables/extensions/buttons.min.js')}}"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/uploaders/fileinput/plugins/purify.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/uploaders/fileinput/plugins/sortable.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/uploaders/fileinput/fileinput.min.js')}}"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/notifications/pnotify.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/notifications/noty.min.js')}}"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='js/plugins/notifications/jgrowl.min.js')}}"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/plugins/extensions/contextmenu.js"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/plugins/visualization/sparkline.min.js"></script>
+
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/core/app.js"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/pages/colors_primary.js"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/pages/datatables_extension_colvis.js"></script>
+            <script type="text/javascript" src="{{url_for('static',filename='')}}js/pages/table_elements.js"></script>
+
+        {% endif %}
+
+        {% block pagecss %}{% endblock %}
+
+    </head>
+
+
+
+{% if config.WEB_LAYOUT_TOPBAR_FIXED %}
+
+    <body class="navbar-top-sm-xs
+    {% if config.WEB_SIDERBAR_COLLAPSABLED %}
+    sidebar-xs
+    {% endif %}
+    ">
+
+        <div class="navbar-fixed-top">
+            {# Main Navbar #}
+            {% include "_topbar.html" %}
+            {# Second Navbar #}
+            {% if config.WEB_SECONDBAR_ENABLED %}
+            {% include "_secondbar.html" %}
+            {% endif %}
+
+        </div>
+
+{% else %}
+
+    <body class="navbar-bottom
+    {% if config.WEB_SIDERBAR_COLLAPSABLED %}
+    sidebar-xs
+    {% endif %}
+    ">
+
+        {# Main Navbar #}
+        {% include "_topbar.html" %}
+        {# Second Navbar #}
+        {% include "_secondbar.html" %}
+
+{% endif %}
+
+        <!-- Page header -->
+        {% include "_page_header.html" %}
+        <!-- Page container -->
+        <div class="page-container">
+
+            <!-- Page content -->
+            <div class="page-content">
+
+
+                <!-- Page Main sidebar -->
+                {#   边侧导航栏         #}
+                {% include "_page_sidebar.html" %}
+
+                <!-- Page Main content -->
+                <div class="content-wrapper">
+                    {% for message in get_flashed_messages(with_categories=True) %}
+                    <div class="alert alert-{{ message[0] }}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message[1] }}
+                    </div>
+                    {% endfor %}
+
+
+                    <!-- Page Custom content -->
+                    {% block body %} {% endblock %}
+
+
+
+                </div>
+                <!-- /Page Main content -->
+            </div>
+            <!-- /Page content -->
+        </div>
+        <!-- /Page container -->
+
+
+
+        <!-- Start Footer -->
+        {% include "_footbar.html" %}
+        <!-- End   Footer -->
+
+        {% if config.WEB_STATIC_COMPRESSED %}
+        {% assets "js_all" %}
+            <script src="{{ ASSET_URL }}" type="text/javascript" charset="utf-8"></script>
+        {% endassets %}
+        {% endif %}
+
+        <!-- Start Custom Page Script -->
+        <script>
+            var resizefunc = [];
+        </script>
+        {% block pagescript %}{% endblock %}
+        <!-- End   Custom Page Script -->
+
+
+    </body>
+
+</html>

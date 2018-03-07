@@ -1,0 +1,57 @@
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-default">
+				<div class="sidebar-content">
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+
+                        {#  Name on top of Sidebar Navigation  #}
+						<div class="category-title h6 category-collapsed">
+							<span>导航栏</span>
+							<ul class="icons-list">
+								<li><a href="#" data-action="collapse"></a></li>
+							</ul>
+						</div>
+
+                        {#  User Info, top of page sidebar  #}
+                        {% if config.WEB_SIDERBAR_USERINFO_SHOW %}
+                        {% include "sidebar_examples/_page_sidebar_user_info.html" %}
+                        {% endif %}
+
+                        {#  Page Sidebar Navigation Items  #}
+						<div class="category-content no-padding" style="display: block;">
+							<ul class="navigation navigation-main navigation-accordion">
+
+                                {#  MAIN  #}
+                                {% include "_page_sidebar_components_main.html" %}
+
+{#                                  FORMS#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_forms.html" %}#}
+{##}
+{#                                  APPERANCE#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_apperance.html" %}#}
+{##}
+{#                                  LAYOUT#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_layout.html" %}#}
+{##}
+{#                                  DATA VISUALIZATION#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_data_visualization.html" %}#}
+{##}
+{#                                  EXTENSIONS#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_extensions.html" %}#}
+{##}
+{#                                  TABLES#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_tables.html" %}#}
+{##}
+{#                                  PAGE KITS#}
+{#                                {% include "sidebar_examples/_page_sidebar_components_page_kits.html" %}#}
+
+							</ul>
+						</div>
+
+
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>

@@ -1,0 +1,23 @@
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src={{ session.avatar_url or "static/images/users/avatar-7.jpg" }} alt="">
+						<span>{{ session.name or session.login or "管理员" }}</span>
+						<i class="caret"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="#"><i class="icon-user"></i>个人中心</a></li>
+						<li><a href="#"><i class="icon-coins"></i>我的钱包</a></li>
+                        <li><a href="#"><i class="icon-statistics"></i>登录记录</a></li>
+                        <li><a href="#"><i class="icon-accessibility"></i>权限设置</a></li>
+						<li><a href="#">
+                            <span class="badge badge-warning pull-right">58</span>
+                            <i class="icon-comment-discussion"></i>未读消息</a>
+                        </li>
+
+                        <li class="divider"></li>
+{#						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>#}
+						<li><a href="/logout"><i class="icon-switch2"></i>退出</a></li>
+					</ul>
+				</li>
+

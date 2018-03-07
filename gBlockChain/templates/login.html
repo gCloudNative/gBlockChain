@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% include "_layout_head_meta.html" %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+        <link href="{{url_for('static',filename='images/favicon_1.ico')}}" rel="shortcut icon" >
+
+        {% assets "css_all" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+        {% endassets %}
+
+        {% block pagecss %}
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg">
+        {% endblock %}
+
+    </head>
+
+
+<body class="login-container bg-slate-800">
+
+	<!-- Page container -->
+	<div class="page-container pb-20">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Advanced login -->
+				<form method="POST" action="/login">
+					<div class="panel panel-body login-form">
+						<div class="text-center">
+							<div class="icon-object border-warning-400 text-warning-400"><i class="icon-spinner9"></i></div>
+							<h5 class="content-group-lg">
+                                <br>
+                                <small class="display-block">请用域账号登录</small>
+                            </h5>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input name="username" type="text" class="form-control" placeholder="Username">
+							<div class="form-control-feedback">
+								<i class="icon-user text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback has-feedback-left">
+							<input name="password" type="password" class="form-control" placeholder="Password">
+							<div class="form-control-feedback">
+								<i class="icon-lock2 text-muted"></i>
+							</div>
+						</div>
+
+						<div class="form-group">
+                        <button type="submit" class="btn bg-blue btn-block">Login <i class="icon-circle-right2 position-right"></i></button>
+						</div>
+                        <br>
+						<div class="content-divider text-muted form-group"><span>or sign in with</span></div>
+						<ul class="list-inline form-group list-inline-condensed text-center">
+                            <li><a href="/gitlab_login_redirect" class="btn border-slate-600 text-slate-600 btn-flat btn-rounded"><i class="fa fa-gitlab"></i></a></li>
+{#							<li><a href="#" class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i class="icon-github"></i></a></li>#}
+{#                            <li><a href="#" class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i class="icon-bubbles2"></i></a></li>#}
+{#							<li><a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i class="icon-twitter"></i></a></li>#}
+{#                            <li><a href="#" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i class="icon-facebook"></i></a></li>#}
+						</ul>
+
+
+					</div>
+				</form>
+				<!-- /advanced login -->
+{#      <form class="form-signin" method="POST" action="/login">#}
+{#        <h2 class="form-signin-heading">Please sign in</h2>#}
+{#          <input id="username" name="username" type="text" class="form-control" placeholder="Username">#}
+{#          <input id="password" name="password" type="password" class="form-control" placeholder="Password">#}
+{#        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>#}
+{#      </form>#}
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+
+
+
+        <!-- Start Footer -->
+{#        {% include "_footbar.html" %}#}
+        <!-- End   Footer -->
+
+        {% assets "js_all" %}
+            <script src="{{ ASSET_URL }}" type="text/javascript" charset="utf-8"></script>
+        {% endassets %}
+
+        <!-- Start Custom Page Script -->
+        <script>
+            var resizefunc = [];
+        </script>
+        {% block pagescript %}{% endblock %}
+        <!-- End   Custom Page Script -->
+
+
+    </body>
+
+</html>

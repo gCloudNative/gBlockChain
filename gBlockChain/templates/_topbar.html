@@ -1,0 +1,19 @@
+	<div class="navbar navbar-inverse">
+        {#  navbar header for brand and logo  #}
+		<div class="navbar-header">
+            {% include "_topbar_nav_brand_logo.html" %}
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+
+            {#  top navbar left  #}
+            <ul class="nav navbar-nav">
+                {% include "_topbar_nav_left.html" %}
+            </ul>
+
+            {#  top navbar right #}
+			<ul class="nav navbar-nav navbar-right">
+                {% include "_topbar_nav_right.html" %}
+			</ul>
+		</div>
+	</div>

@@ -1,0 +1,60 @@
+{#	Second navbar #}
+		<div class="navbar navbar-inverse navbar-transparent" id="navbar-second">
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+			<div class="navbar-collapse collapse" id="navbar-second-toggle">
+				<ul class="nav navbar-nav navbar-nav-material">
+                    {# Dashboard #}
+                    <li class="inactive"><a href="" target="_blank"><i class="icon-display position-left"></i> Dashboard</a></li>
+
+                    {# Infrastructure #}
+                    {% include "_secondbar_infrastructure.html" %}
+
+                    {#  Harbor / Docker Registry   #}
+                    {% include "_secondbar_docker_registry.html" %}
+
+
+                    {# Gitlab and Harbor Docker Registry#}
+{#                    {% include "_secondbar_gitlab_docker_registry.html" %}#}
+
+                    {# Continuous Integration#}
+                    {% include "_secondbar_ci.html" %}
+
+                    {# Deployment and Docker Orchestration : Rancher and Kubernetes #}
+                    {% include "_secondbar_deployment_container_orchestration.html" %}
+
+                    {# Monitoring System : Prometheus #}
+                    {% include "_secondbar_monitoring.html" %}
+
+                    {# Centralized Logging System : ELK (Elasticsearch + Logstash + Kibana) #}
+                    {% include "_secondbar_logging.html" %}
+
+                    {# Big Data #}
+{#                    {% include "_secondbar_bigdata.html" %}#}
+
+                    {# Block Chain#}
+                    {% include "_secondbar_blockchain.html" %}
+
+                    {# Machine Learning#}
+{#                    {% include "_secondbar_machine_learning.html" %}#}
+
+                    {# Serverless#}
+{#                    {% include "_secondbar_serverless.html" %}#}
+
+                    {# Tools Links #}
+                    {% include "_secondbar_tools.html" %}
+
+				</ul>
+
+
+                {# Secondbar Right Links #}
+				<ul class="nav navbar-nav navbar-nav-material navbar-right">
+                    {% include "_secondbar_right.html" %}
+				</ul>
+
+
+			</div>
+		</div>
+		<!-- /second navbar -->

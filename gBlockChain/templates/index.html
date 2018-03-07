@@ -1,0 +1,870 @@
+{% extends "_layout.html" %}
+
+{% block title %} {{ pagetitle or config.APP_BRAND }}
+{% endblock %}
+
+{% block body %}
+
+
+
+				<!-- Table components -->
+				<div class="panel panel-flat">
+					<div class="panel-heading">
+						<h5 class="panel-title">Table components</h5>
+						<div class="heading-elements">
+							<ul class="icons-list">
+		                		<li><a data-action="collapse"></a></li>
+		                		<li><a data-action="reload"></a></li>
+		                		<li><a data-action="close"></a></li>
+		                	</ul>
+	                	</div>
+					</div>
+
+					<div class="panel-body">
+						Table below contains different examples of components, that can be used in the table: form components, interface components, buttons etc. All of them are adapted for different cases, such as multiple elements in the same table cell. These components support all available sizes and styles. Also added a few examples of sparklines based on <code>sparklines.js</code> library. For more advanced sparklines <code>D3.js</code> library suits best
+					</div>
+
+					<div class="table-responsive">
+						<table class="table table-bordered table-lg">
+							<tbody>
+								<tr class="active">
+									<th colspan="3">Control buttons and icons</th>
+								</tr>
+								<tr>
+									<td class="col-md-2 col-sm-3">Control links</td>
+									<td class="col-sm-3">
+										<ul class="icons-list">
+											<li><a href="#"><i class="icon-pencil7"></i></a></li>
+											<li><a href="#"><i class="icon-trash"></i></a></li>
+											<li><a href="#"><i class="icon-cog7"></i></a></li>
+										</ul>
+									</td>
+									<td>Basic table row control buttons. These links appear as a list of links with icons</td>
+								</tr>
+								<tr>
+									<td>Colored links</td>
+									<td>
+										<ul class="icons-list">
+											<li class="text-primary-600"><a href="#"><i class="icon-pencil7"></i></a></li>
+											<li class="text-danger-600"><a href="#"><i class="icon-trash"></i></a></li>
+											<li class="text-teal-600"><a href="#"><i class="icon-cog7"></i></a></li>
+										</ul>
+									</td>
+									<td>Control links support different colors: default Bootstrap contextual colors and custom text colors from the custom color system. To use these colors add <code>.text-*</code> class to the parent <code>&lt;li></code> element</td>
+								</tr>
+								<tr>
+									<td>Links with tooltip</td>
+									<td>
+										<ul class="icons-list">
+											<li><a href="#" data-popup="tooltip" title="Edit"><i class="icon-pencil7"></i></a></li>
+											<li><a href="#" data-popup="tooltip" title="Remove"><i class="icon-trash"></i></a></li>
+											<li><a href="#" data-popup="tooltip" title="Options"><i class="icon-cog7"></i></a></li>
+										</ul>
+									</td>
+									<td>Table row control links with default Bootstrap tooltip triggered on <code>hover</code></td>
+								</tr>
+								<tr>
+									<td>Links with modals</td>
+									<td>
+										<ul class="icons-list">
+											<li><a href="#" data-toggle="modal" data-target="#edit_modal"><i class="icon-pencil7"></i></a></li>
+											<li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+											<li><a href="#" data-toggle="modal" data-target="#options_modal"><i class="icon-cog7"></i></a></li>
+										</ul>
+									</td>
+									<td>These control links launch <code>modals</code> with table row options. Click each icon to see it in action</td>
+								</tr>
+								<tr>
+									<td>Links with dropdown</td>
+									<td>
+										<ul class="icons-list">
+											<li><a href="#"><i class="icon-pencil7"></i></a></li>
+											<li><a href="#"><i class="icon-trash"></i></a></li>
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-cog7"></i>
+													<span class="caret"></span>
+												</a>
+
+												<ul class="dropdown-menu">
+													<li><a href="#"><i class="icon-file-pdf"></i> Export to PDF</a></li>
+													<li><a href="#"><i class="icon-file-excel"></i> Export to CSV</a></li>
+													<li><a href="#"><i class="icon-file-word"></i> Export to DOC</a></li>
+												</ul>
+											</li>
+										</ul>
+									</td>
+									<td>Control links with optional <code>dropdown</code> menu appended to one of the links</td>
+								</tr>
+								<tr>
+									<td>Options dropdown</td>
+									<td>
+										<ul class="icons-list">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-cog7"></i>
+													<span class="caret"></span>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-solid">
+													<li class="dropdown-header">Options</li>
+													<li><a href="#"><i class="icon-pencil7"></i>Edit entry</a></li>
+													<li><a href="#"><i class="icon-bin"></i>Remove entry</a></li>
+													<li class="dropdown-header">Export</li>
+													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
+													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
+													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
+												</ul>
+											</li>
+										</ul>
+									</td>
+									<td>Here all table row controls are moved to one <code>general dropdown</code> menu, that is appended to 1 link</td>
+								</tr>
+								<tr>
+									<td>Links with text</td>
+									<td>
+										<ul class="list list-inline no-margin">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle text-default" data-toggle="dropdown">
+													<i class="icon-cog7 position-left"></i>
+													Options
+													<span class="caret"></span>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li class="dropdown-header">Options</li>
+													<li><a href="#"><i class="icon-pencil7"></i>Edit entry</a></li>
+													<li><a href="#"><i class="icon-bin"></i>Remove entry</a></li>
+													<li class="dropdown-header">Export</li>
+													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
+													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
+													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
+												</ul>
+											</li>
+										</ul>
+									</td>
+									<td>Control link with text and icon. Text can be placed <code>before</code> icon or <code>after</code> it. Optional <code>.position-left</code> class adds extra right margin to the icon</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Labels and badges</th>
+								</tr>
+								<tr>
+									<td>Label</td>
+									<td>
+										<span class="label label-danger">In progress</span>
+										<span class="label label-flat border-success text-success-600 position-right">Done</span>
+									</td>
+									<td>Basic Bootstrap <code>label</code>. Supports default contextual colors and custom colors from the color system</td>
+								</tr>
+								<tr>
+									<td>Badge</td>
+									<td>
+										<span class="badge badge-primary">92</span>
+										<span class="badge badge-flat border-danger text-danger-600 position-right">190</span>
+									</td>
+									<td>Basic Bootstrap <code>badge</code>. As as labels, badges support contextual colors and custom colors</td>
+								</tr>
+								<tr>
+									<td>Linked label</td>
+									<td>
+										<a href="#" class="label label-warning">Click me</a>
+									</td>
+									<td>Liked label. To use label as a link, add <code>.label</code> class to the link element</td>
+								</tr>
+								<tr>
+									<td>Linked badge</td>
+									<td>
+										<a href="#" class="badge badge-default">59</a>
+									</td>
+									<td>Liked badge. To use badge as a link, add <code>.badge</code> class to the link element</td>
+								</tr>
+								<tr>
+									<td>Label with dropdown</td>
+									<td>
+										<div class="btn-group">
+											<a href="#" class="label bg-teal dropdown-toggle" data-toggle="dropdown">Priority <span class="caret"></span></a>
+
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><span class="status-mark bg-danger position-left"></span> High priority</a></li>
+												<li><a href="#"><span class="status-mark bg-info position-left"></span> Normal priority</a></li>
+												<li><a href="#"><span class="status-mark bg-primary position-left"></span> Low priority</a></li>
+											</ul>
+										</div>
+									</td>
+									<td>Label with dropdown menu</td>
+								</tr>
+								<tr>
+									<td>Badge with dropdown</td>
+									<td>
+										<div class="btn-group">
+											<a href="#" class="badge bg-indigo-400 dropdown-toggle" data-toggle="dropdown">50% <span class="caret"></span></a>
+
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a href="#"><i class="icon-arrow-up12 text-success"></i> Increase to 100%</a></li>
+												<li><a href="#"><i class="icon-arrow-up12 text-success"></i> Increase to 90%</a></li>
+												<li><a href="#"><i class="icon-arrow-up12 text-success"></i> Increase to 70%</a></li>
+												<li><a href="#"><i class="icon-arrow-down12 text-danger"></i> Decrease to 30%</a></li>
+												<li><a href="#"><i class="icon-arrow-down12 text-danger"></i> Decrease to 10%</a></li>
+												<li><a href="#"><i class="icon-arrow-down12 text-danger"></i> Decrease to 0%</a></li>
+											</ul>
+										</div>
+									</td>
+									<td>Badge with dropdown menu</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Styled checkboxes</th>
+								</tr>
+								<tr>
+									<td>Styled checkbox</td>
+									<td>
+										<input type="checkbox" class="styled" checked="checked">
+									</td>
+									<td>Single styled checkbox without label</td>
+								</tr>
+								<tr>
+									<td>Left position</td>
+									<td>
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked">
+											Left styled checkbox
+										</label>
+									</td>
+									<td>Styled checkbox with label, <code>left</code> position</td>
+								</tr>
+								<tr>
+									<td>Right position</td>
+									<td>
+										<label class="checkbox-inline checkbox-right">
+											<input type="checkbox" class="styled" checked="checked">
+											Right styled checkbox
+										</label>
+									</td>
+									<td>Styled checkbox with label, <code>right</code> position. Does not require <code>.checkbox</code> classes</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Styled radios</th>
+								</tr>
+								<tr>
+									<td>Styled radio</td>
+									<td>
+										<input type="radio" class="styled" checked="checked">
+									</td>
+									<td>Single styled radio without label. Does not require <code>.radio</code> classes</td>
+								</tr>
+								<tr>
+									<td>Left position</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="radio-styled" class="styled" checked="checked">
+											Left styled radio
+										</label>
+									</td>
+									<td>Styled radio with label, <code>left</code> position</td>
+								</tr>
+								<tr>
+									<td>Right position</td>
+									<td>
+										<label class="radio-inline radio-right">
+											<input type="radio" name="radio-styled" class="styled">
+											Right styled radio
+										</label>
+									</td>
+									<td>Styled radio with label, <code>right</code> position</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Default checkboxes</th>
+								</tr>
+								<tr>
+									<td>Default checkbox</td>
+									<td>
+										<input type="checkbox" checked="checked">
+									</td>
+									<td>Single default checkbox without label. Does not require <code>.checkbox</code> classes</td>
+								</tr>
+								<tr>
+									<td>Left position</td>
+									<td>
+										<label class="checkbox-inline">
+											<input type="checkbox" checked="checked">
+											Left default checkbox
+										</label>
+									</td>
+									<td>Default checkbox with label, <code>left</code> position</td>
+								</tr>
+								<tr>
+									<td>Right position</td>
+									<td>
+										<label class="checkbox-inline checkbox-right">
+											<input type="checkbox" checked="checked">
+											Right default checkbox
+										</label>
+									</td>
+									<td>Default checkbox with label, <code>right</code> position</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Default radios</th>
+								</tr>
+								<tr>
+									<td>Default radio</td>
+									<td>
+										<input type="radio" checked="checked">
+									</td>
+									<td>Single default radio without label. Does not require <code>.radio</code> classes</td>
+								</tr>
+								<tr>
+									<td>Left position</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="radio-default" checked="checked">
+											Left default radio
+										</label>
+									</td>
+									<td>Default radio with label, <code>left</code> position</td>
+								</tr>
+								<tr>
+									<td>Right position</td>
+									<td>
+										<label class="radio-inline radio-right">
+											<input type="radio" name="radio-default">
+											Right default radio
+										</label>
+									</td>
+									<td>Default radio with label, <code>right</code> position</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Switchery toggles</th>
+								</tr>
+								<tr>
+									<td>Switchery toggle</td>
+									<td>
+										<div class="switchery-xs">
+											<input type="checkbox" class="switchery" checked="checked">
+										</div>
+									</td>
+									<td>Single switchery checkbox in <code>mini</code> size</td>
+								</tr>
+								<tr>
+									<td>Left position</td>
+									<td>
+										<label class="checkbox-inline checkbox-switchery switchery-xs">
+											<input type="checkbox" class="switchery" checked="checked">
+											Left switch
+										</label>
+									</td>
+									<td>Switchery checkbox with label, <code>left</code> position</td>
+								</tr>
+								<tr>
+									<td>Right position</td>
+									<td>
+										<label class="checkbox-inline checkbox-right checkbox-switchery switchery-xs">
+											<input type="checkbox" class="switchery" checked="checked">
+											Right switch
+										</label>
+									</td>
+									<td>Switchery checkbox with label, <code>right</code> position</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">File uploaders</th>
+								</tr>
+								<tr>
+									<td>Default upload</td>
+									<td>
+										<input type="file" class="form-control">
+									</td>
+									<td>Default single file uploader</td>
+								</tr>
+								<tr>
+									<td>Styled uploader</td>
+									<td>
+										<input type="file" class="file-styled">
+									</td>
+									<td>Single file uploader, styled with <code>uniform.js</code> plugin</td>
+								</tr>
+								<tr>
+									<td>Multiple uploader</td>
+									<td>
+										<input type="file" class="bootstrap-uploader">
+									</td>
+									<td>Multiple file uploader, using <code>file_input.js</code> plugin</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Inputs and selects</th>
+								</tr>
+								<tr>
+									<td>Text edit</td>
+									<td>
+										<a href="#" id="edit" data-title="Edit username">Eugene Kopyov</a>
+									</td>
+									<td>Simple example of editable text inside table cell, using <code>x-editable.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Edit with switch</td>
+									<td>
+										<a href="#" id="switchery-editable" data-type="checklist" data-pk="1" data-title="Select state"></a>
+									</td>
+									<td>Example of in-place editing with simple implementation of <code>switchery</code> checkbox</td>
+								</tr>
+								<tr>
+									<td>Input field</td>
+									<td>
+										<input type="text" class="form-control" placeholder="Text input">
+									</td>
+									<td>Basic input field with <code>.form-control</code> class. Supports all available sizes</td>
+								</tr>
+								<tr>
+									<td>Input group</td>
+									<td>
+										<div class="input-group">
+											<span class="input-group-addon">
+												<i class="icon-menu6"></i>
+											</span>
+											<input type="text" class="form-control" placeholder="Input group">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-default dropdown-toggle btn-icon" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></button>
+				                                <ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#">Action</a></li>
+													<li><a href="#">Another action</a></li>
+													<li><a href="#">Something else here</a></li>
+													<li><a href="#">One more line</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td>Extended form controls with appended and prepended text of buttons</td>
+								</tr>
+								<tr>
+									<td>Spinner</td>
+									<td>
+										<input type="text" value="20" class="touchspin">
+									</td>
+									<td>Basic implementation of spinners based on <code>bootspin.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Default select</td>
+									<td>
+										<select name="select" class="form-control">
+		                                    <option value="opt1">Basic select box</option>
+		                                    <option value="opt2">Option 2</option>
+		                                    <option value="opt3">Option 3</option>
+		                                    <option value="opt4">Option 4</option>
+		                                    <option value="opt5">Option 5</option>
+		                                    <option value="opt6">Option 6</option>
+		                                    <option value="opt7">Option 7</option>
+		                                    <option value="opt8">Option 8</option>
+		                                </select>
+									</td>
+									<td>Default simple selects with <code>.form-control</code> class. Supports all available sizes</td>
+								</tr>
+								<tr>
+									<td>Select2 single</td>
+									<td>
+										<select name="select" class="select">
+		                                    <option value="opt1">Select2 select</option>
+		                                    <option value="opt2">Option 2</option>
+		                                    <option value="opt3">Option 3</option>
+		                                    <option value="opt4">Option 4</option>
+		                                    <option value="opt5">Option 5</option>
+		                                    <option value="opt6">Option 6</option>
+		                                    <option value="opt7">Option 7</option>
+		                                    <option value="opt8">Option 8</option>
+		                                </select>
+									</td>
+									<td>Single select based on <code>select2.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Select2 multiple</td>
+									<td>
+										<select name="select" multiple="multiple" class="select select-sm">
+		                                    <option value="opt1" selected="selected">Option 1</option>
+		                                    <option value="opt2" selected="selected">Option 2</option>
+		                                    <option value="opt3">Option 3</option>
+		                                    <option value="opt4">Option 4</option>
+		                                    <option value="opt5">Option 5</option>
+		                                    <option value="opt6">Option 6</option>
+		                                    <option value="opt7">Option 7</option>
+		                                    <option value="opt8">Option 8</option>
+		                                </select>
+									</td>
+									<td>Multiple select based on <code>select2.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Selectbox select</td>
+									<td>
+										<select class="selectbox">
+		                                    <option value="opt1">SelectBox select</option>
+		                                    <option value="opt2">Option 2</option>
+		                                    <option value="opt3">Option 3</option>
+		                                    <option value="opt4">Option 4</option>
+		                                    <option value="opt5">Option 5</option>
+		                                    <option value="opt6">Option 6</option>
+		                                    <option value="opt7">Option 7</option>
+		                                    <option value="opt8">Option 8</option>
+		                                </select>
+									</td>
+									<td>Single select based on <code>selectBoxIt.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Multiselect</td>
+									<td>
+										<select class="multiselect" multiple="multiple">
+		                                    <option value="opt1">Option 1</option>
+		                                    <option value="opt2">Option 2</option>
+		                                    <option value="opt3">Option 3</option>
+		                                    <option value="opt4">Option 4</option>
+		                                    <option value="opt5">Option 5</option>
+		                                    <option value="opt6">Option 6</option>
+		                                    <option value="opt7">Option 7</option>
+		                                    <option value="opt8">Option 8</option>
+		                                </select>
+									</td>
+									<td>Multiple select with checkboxes based on <code>multiselect.js</code> library</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">UI components</th>
+								</tr>
+								<tr>
+									<td>Context menu</td>
+									<td data-toggle="context" data-target=".context-data-menu">
+										Right click on this cell
+
+										<div class="context-data-menu">
+											<ul class="dropdown-menu">
+												<li class="dropdown-header">Options</li>
+												<li><a href="#"><i class="icon-pencil7"></i>Edit entry</a></li>
+												<li><a href="#"><i class="icon-bin"></i>Remove entry</a></li>
+												<li class="dropdown-header">Export</li>
+												<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
+												<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
+												<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
+											</ul>
+										</div>
+									</td>
+									<td>Basic implementation of a <code>context menu</code> attached to the table cell</td>
+								</tr>
+								<tr>
+									<td>Button</td>
+									<td>
+										<button type="button" class="btn btn-success">Basic button</button>
+									</td>
+									<td>Simple button, supports all sizes and colors</td>
+								</tr>
+								<tr>
+									<td>Buttons with icon</td>
+									<td>
+										<button type="button" class="btn btn-danger btn-icon"><i class="icon-menu7"></i></button>
+
+										<div class="btn-group position-right">
+											<button type="button" class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i><span class="caret"></span></button>
+
+											<ul class="dropdown-menu">
+												<li><a href="#">Action</a></li>
+												<li><a href="#">Another action</a></li>
+												<li><a href="#">Something else here</a></li>
+												<li><a href="#">One more line</a></li>
+											</ul>
+										</div>
+									</td>
+									<td>Simple button and button dropdowns with icon only, require <code>.btn-icon</code> class for padding correction</td>
+								</tr>
+								<tr>
+									<td>Button dropdown</td>
+									<td>
+										<div class="btn-group">
+											<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Button dropdown <span class="caret"></span></button>
+
+											<ul class="dropdown-menu">
+												<li><a href="#">Action</a></li>
+												<li><a href="#">Another action</a></li>
+												<li><a href="#">Something else here</a></li>
+												<li><a href="#">One more line</a></li>
+											</ul>
+										</div>
+									</td>
+									<td>Button dropdown. Also supports segmented buttons and button toggles</td>
+								</tr>
+								<tr>
+									<td>Progress bar</td>
+									<td>
+										<div class="progress">
+											<div class="progress-bar progress-bar-info" style="width: 60%;">
+												<span class="sr-only">60% Complete</span>
+											</div>
+										</div>
+									</td>
+									<td>Progress bar, supports all available color and sizing options</td>
+								</tr>
+
+								<tr class="border-double active">
+									<th colspan="3">Simple sparklines</th>
+								</tr>
+								<tr>
+									<td>Line</td>
+									<td>
+										<span class="spark-line">5,6,7,9,9,5,3,2,2,4,6,7,9,9,9,9,9,9,3,4,5,1,7,4,3,2,7,8,4,1,7,3,4,7,8,9,8,7,8,9,5,6,7,9,9</span>
+									</td>
+									<td>Simple sparkline based on <code>sparklines.js</code> library</td>
+								</tr>
+								<tr>
+									<td>Filled area</td>
+									<td>
+										<span class="spark-line" sparkFillColor="false">5,6,7,9,9,5,3,2,2,4,6,7,9,9,9,9,9,9,3,4,5,1,7,4,3,2,7,8,4,1,7,3,4,7,8,9,8,7,8,9,5,6,7,9,9</span>
+									</td>
+									<td>Line with filled area</td>
+								</tr>
+								<tr>
+									<td>Bars</td>
+									<td>
+										<span class="spark-bars">10,8,9,3,5,8,5,9,4,4,9,11</span>
+									</td>
+									<td>Bars with positive values</td>
+								</tr>
+								<tr>
+									<td>Negative values</td>
+									<td>
+										<span class="spark-bars">4,1,5,7,-9,9,8,7,-6,6,4,-7,-8,4,3,2,2,5,-6,-7</span>
+									</td>
+									<td>Bars with positive and negative values</td>
+								</tr>
+								<tr>
+									<td>Stacked bars</td>
+									<td>
+										<span class="spark-bars">4:1,5:7,9:9,8:7,6:6,4:7,8:4,3:2,2:5,6:7</span>
+									</td>
+									<td>Stacked bars</td>
+								</tr>
+								<tr>
+									<td>Composite</td>
+									<td>
+										<span class="spark-comoposite">4,1,5,7,9,9,8,7,6,6,4,7,8,4,3,2,2,5,6,7</span>
+									</td>
+									<td>Composite chart with line and bars</td>
+								</tr>
+								<tr>
+									<td>Pies</td>
+									<td>
+										<span class="spark-pies">4,1,5</span>
+										<span class="spark-pies">7,9,4</span>
+										<span class="spark-pies">2,5,7</span>
+									</td>
+									<td>Multiple pies</td>
+								</tr>
+								<tr>
+									<td>Bullet</td>
+									<td>
+										<span class="spark-bullet">10,12,12,9,7</span>
+									</td>
+									<td>Simple bullet chart</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /table components -->
+
+
+
+
+
+<!-- modal -->
+	            <!-- Edit modal -->
+				<div id="edit_modal" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Edit table</h5>
+							</div>
+
+							<div class="modal-body">
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>First Name</th>
+												<th>Last Name</th>
+												<th>Username</th>
+												<th class="col-xs-1">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" class="form-control" value="Mark"></td>
+												<td><input type="text" class="form-control" value="Otto"></td>
+												<td><input type="text" class="form-control" value="@mdo"></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-plus22"></i></a></li>
+														<li><a href="#"><i class="icon-cross3"></i></a></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td><input type="text" class="form-control" value="Jacob"></td>
+												<td><input type="text" class="form-control" value="Thornton"></td>
+												<td><input type="text" class="form-control" value="@fat"></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-plus22"></i></a></li>
+														<li><a href="#"><i class="icon-cross3"></i></a></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td><input type="text" class="form-control" value="Larry"></td>
+												<td><input type="text" class="form-control" value="the Bird"></td>
+												<td><input type="text" class="form-control" value="@twitter"></td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li><a href="#"><i class="icon-plus22"></i></a></li>
+														<li><a href="#"><i class="icon-cross3"></i></a></li>
+													</ul>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+
+	            <!-- Remove modal -->
+				<div id="remove_modal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Confirm action</h5>
+							</div>
+
+							<div class="modal-body">
+								You are about to remove this row. Are you sure?
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Yes, remove</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /remove modal -->
+
+
+	            <!-- Options modal -->
+				<div id="options_modal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h5 class="modal-title">Row options</h5>
+							</div>
+
+							<div class="modal-body">
+								<form class="form-horizontal">
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3">Allow select:</label>
+										<div class="col-sm-9">
+											<select class="select">
+												<option value="single" selected="selected">Single</option>
+												<option value="multiple">Multiple</option>
+												<option value="disabled">Disabled</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3">Allow edit:</label>
+										<div class="col-sm-9">
+											<select class="select">
+												<option value="inline">Edit inline</option>
+												<option value="modal" selected="selected">Edit in modal</option>
+												<option value="popover">Edit in popover</option>
+												<option value="disabled">Disabled</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3">Add status:</label>
+										<div class="col-sm-9">
+											<select class="select">
+												<option value="completed" selected="selected">Completed</option>
+												<option value="progress">In progress</option>
+												<option value="assigned">Assigned</option>
+												<option value="created">Created</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3">Set priority:</label>
+										<div class="col-sm-9">
+											<select class="select-actions">
+												<option value="urgent" data-icon="radio-checked text-danger" selected="selected">Urgent</option>
+												<option value="high" data-icon="radio-checked text-primary">High</option>
+												<option value="normal" data-icon="radio-checked text-success">Normal</option>
+												<option value="low" data-icon="radio-checked text-info">Low</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3" for="enable-controls">Enable controls:</label>
+										<div class="col-sm-9">
+											<div class="checkbox switchery-sm">
+												<input type="checkbox" class="display-controls" id="enable-controls" checked="checked">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="text-semibold control-label col-sm-3">Controls:</label>
+										<div class="col-sm-9">
+											<select class="select-actions select-sm" id="available_controls" multiple="multiple">
+												<option value="edit" data-icon="pencil7" selected="selected">Edit</option>
+												<option value="remove" data-icon="trash" selected="selected">Remove</option>
+												<option value="options" data-icon="cog4" selected="selected">Options</option>
+												<option value="add" data-icon="plus22">Add</option>
+												<option value="add" data-icon="versions">Copy</option>
+												<option value="select" data-icon="check">Select</option>
+												<option value="mark" data-icon="file-download">Export</option>
+												<option value="mark" data-icon="file-upload">Import</option>
+												<option value="mark" data-icon="printer">Print</option>
+											</select>
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Save settings</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /options modal -->
+<!-- end of modal for sparklines -->
+
+
+
+
+
+{% endblock %}

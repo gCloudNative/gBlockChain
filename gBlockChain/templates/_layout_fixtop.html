@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% include "_layout_head_meta.html" %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+        <link href="{{url_for('static',filename='images/favicon_1.ico')}}" rel="shortcut icon" >
+
+        {% assets "css_all" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+        {% endassets %}
+
+        {% block pagecss %}{% endblock %}
+
+    </head>
+
+
+    <body class="navbar-top-sm-xs
+    {% if config.WEB_SIDERBAR_COLLAPSABLED %}
+    sidebar-xs
+    {% endif %}
+    ">
+
+        <div class="navbar-fixed-top">
+            {# Main Navbar #}
+            {% include "_topbar.html" %}
+            {# Second Navbar #}
+            {% if config.WEB_SECONDBAR_ENABLED %}
+            {% include "_secondbar.html" %}
+            {% endif %}
+        </div>
+
+        <!-- Page header -->
+        {% include "_page_header.html" %}
+        <!-- Page container -->
+        <div class="page-container">
+            <!-- Page content -->
+            <div class="page-content">
+                <!-- Page Main sidebar -->
+                {% include "_page_sidebar.html" %}
+
+                <!-- Page Main content -->
+                <div class="content-wrapper">
+                    {% for message in get_flashed_messages(with_categories=True) %}
+                    <div class="alert alert-{{ message[0] }}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message[1] }}
+                    </div>
+                    {% endfor %}
+
+
+                    <!-- Page Custom content -->
+                    {% block body %} {% endblock %}
+
+
+
+                </div>
+                <!-- /Page Main content -->
+            </div>
+            <!-- /Page content -->
+        </div>
+        <!-- /Page container -->
+
+
+
+        <!-- Start Footer -->
+        {% include "_footbar.html" %}
+        <!-- End   Footer -->
+
+        {% assets "js_all" %}
+            <script src="{{ ASSET_URL }}" type="text/javascript" charset="utf-8"></script>
+        {% endassets %}
+
+        <!-- Start Custom Page Script -->
+        <script>
+            var resizefunc = [];
+        </script>
+        {% block pagescript %}{% endblock %}
+        <!-- End   Custom Page Script -->
+
+
+    </body>
+
+</html>
