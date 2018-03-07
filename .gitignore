@@ -7,6 +7,7 @@ __pycache__/
 .venv
 hosts
 sync.sh
+data_logs
 
 
 # C extensions
