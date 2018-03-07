@@ -65,6 +65,7 @@ def render_html(template, **defaults):
     def wrapped(result):
         variables = defaults.copy()
         # data = json.loads( json.dumps(result, default=json_default_format)  )
+        # print("data", data)
         variables.update(result)
         return render_template(template, **variables)
     return wrapped
