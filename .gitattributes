@@ -1,4 +1,5 @@
-*               text=auto
+*.py linguist-language=python
+*           text=auto
 *.txt       text
 *.jpg       -text
 *.vcproj    text eol=crlf
