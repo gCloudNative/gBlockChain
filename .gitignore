@@ -3,13 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#
-.venv
-hosts
-sync.sh
-data_logs
-gBlockChain/static/gen
-
 # C extensions
 *.so
 
