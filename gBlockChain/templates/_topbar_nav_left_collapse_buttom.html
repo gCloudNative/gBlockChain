@@ -1,5 +1,13 @@
 <li>
-    <a class="sidebar-control sidebar-main-toggle hidden-xs">
+{#    <a class="sidebar-control sidebar-main-toggle hidden-xs">#}
+{#    <a class="sidebar-control sidebar-main-hide hidden-xs">#}
+    <a class="sidebar-control
+    {% if config.WEB_SIDERBAR_TOGGLE_ELSE_HIDE %}
+        sidebar-main-toggle
+    {% else %}
+        sidebar-main-hide
+    {% endif %}
+    hidden-xs">
         <i class="icon-paragraph-justify3"></i>
     </a>
 </li>
