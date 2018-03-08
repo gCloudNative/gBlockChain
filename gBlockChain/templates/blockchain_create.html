@@ -1,0 +1,204 @@
+{% extends "_layout.html" %}
+
+{% block title %} {{ pagetitle or config.APP_BRAND }}
+{% endblock %}
+
+
+
+{% block pagecss %}
+{% endblock %}
+
+{% block body %}
+    <!-- Panel horizontal -->
+    <div class="panel panel-flat">
+        <!-- /Panel Head horizontal -->
+        <div class="panel-heading">
+            <h6 class="panel-title">新建私链</h6>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /Panel Head horizontal -->
+
+        <!-- /Panel Body horizontal -->
+        <div class="panel-body">
+            <!-- Description -->
+{#						        <p class="content-group-lg"></p>#}
+
+            <!-- Form horizontal -->
+            <form class="form-horizontal" method="post" action="" >
+
+                <fieldset class="content-group">
+                    <legend class="text-bold"></legend>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">区块链名称</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="project_name" id="project_name" class="form-control text-light text-violet"  maxlength="24"  placeholder="请输入链名称" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">相关描述</label>
+                        <div class="col-lg-10">
+                            <textarea rows="5" cols="5" name="project_description" id="project_description" class="form-control text-light text-size-small text-teal" maxlength="512" placeholder="填写链相关描述"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">链负责人</label>
+                        <div class="col-lg-10 text-light">
+                            <select name="project_owner" id="project_owner" data-placeholder="请选择..." class="select">
+                                <option></option>
+                                <optgroup label="开发人员">
+                                    <option value="dev1">开发人员1</option>
+                                    <option value="dev2">开发人员2</option>
+                                    <option value="dev3">开发人员3</option>
+                                    <option value="dev4">开发人员4</option>
+                                </optgroup>
+
+                                <optgroup label="前端人员">
+                                    <option value="frontend1">前端人员1</option>
+                                    <option value="frontend2">前端人员2</option>
+                                    <option value="frontend3">前端人员3</option>
+                                    <option value="frontend4">前端人员4</option>
+                                </optgroup>
+
+                                <optgroup label="测试人员">
+                                    <option value="test1">测试人员1</option>
+                                    <option value="test2">测试人员2</option>
+                                    <option value="test3">测试人员3</option>
+                                    <option value="test4">测试人员4</option>
+                                </optgroup>
+
+                                <optgroup label="运维人员">
+                                    <option value="devops1">运维人员1</option>
+                                    <option value="devops2">运维人员2</option>
+                                    <option value="devops3">运维人员3</option>
+                                    <option value="devops4">运维人员4</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">开发人员</label>
+                        <div class="col-lg-10 text-light">
+                            <select multiple="multiple" name="project_developers" id="project_developers" data-placeholder="请选择..." class="select">
+                                <option></option>
+                                <optgroup label="开发人员">
+                                    <option value="dev1">开发人员1</option>
+                                    <option value="dev2">开发人员2</option>
+                                    <option value="dev3">开发人员3</option>
+                                    <option value="dev4">开发人员4</option>
+                                </optgroup>
+
+                                <optgroup label="前端人员">
+                                    <option value="frontend1">前端人员1</option>
+                                    <option value="frontend2">前端人员2</option>
+                                    <option value="frontend3">前端人员3</option>
+                                    <option value="frontend4">前端人员4</option>
+                                </optgroup>
+
+                                <optgroup label="测试人员">
+                                    <option value="test1">测试人员1</option>
+                                    <option value="test2">测试人员2</option>
+                                    <option value="test3">测试人员3</option>
+                                    <option value="test4">测试人员4</option>
+                                </optgroup>
+
+                                <optgroup label="运维人员">
+                                    <option value="devops1">运维人员1</option>
+                                    <option value="devops2">运维人员2</option>
+                                    <option value="devops3">运维人员3</option>
+                                    <option value="devops4">运维人员4</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">测试人员</label>
+                        <div class="col-lg-10 text-light">
+                            <select multiple="multiple" name="project_testers" id="project_testers" data-placeholder="请选择..." class="select">
+                                <option></option>
+                                <optgroup label="测试人员">
+                                    <option value="test1">测试人员1</option>
+                                    <option value="test2">测试人员2</option>
+                                    <option value="test3">测试人员3</option>
+                                    <option value="test4">测试人员4</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">运维人员</label>
+                        <div class="col-lg-10 text-light">
+                            <select multiple="multiple" name="project_devops" id="project_devops" data-placeholder="请选择..." class="select">
+                                <option></option>
+                                <optgroup label="运维人员">
+                                    <option value="devops1">运维人员1</option>
+                                    <option value="devops2">运维人员2</option>
+                                    <option value="devops3">运维人员3</option>
+                                    <option value="devops4">运维人员4</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-2">项目组件</label>
+                        <div class="col-lg-10 text-light">
+                            <select multiple="multiple" name="project_repos" id="project_repos" data-placeholder="请选择代码仓库" class="select">
+                                <option></option>
+                                <optgroup label="超级账本Hyperledger">
+                                    <option value="hyperledger">Hyperledger</option>
+                                </optgroup>
+                                <optgroup label="以太坊Ethereum">
+                                    <option value="geth">Geth</option>
+                                </optgroup>
+                                <optgroup label="分布式账本Corda">
+                                    <option value="corda">Corda</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                </fieldset>
+
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">提交<i class="icon-arrow-right14 position-right"></i></button>
+                </div>
+
+            </form>
+            <!-- /Form horizontal -->
+
+        </div>
+        <!-- /Panel Body horizontal -->
+
+    </div>
+    <!-- /Panel horizontal -->
+
+
+{% endblock %}
+
+
+{% block pagescript %}
+<script src="{{url_for('static',filename='js/pages/form_select2.js')}}"></script>
+
+
+
+{% endblock %}

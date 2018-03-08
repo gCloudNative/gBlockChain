@@ -20,7 +20,12 @@ def index():
 @view(bp_html, '/test', render_html('index_blank.html'), methods=['GET'])
 def test():
     return dict(title=u"区块链部署管理平台" )
-    
+
+@view(bp_html, '/create', render_html('blockchain_create.html'), methods=['GET'])
+def create():
+    return dict(title=u"区块链部署管理平台" )
+
+
 @view(bp_html, '/health', None)
 def health():
     return 'OK'
