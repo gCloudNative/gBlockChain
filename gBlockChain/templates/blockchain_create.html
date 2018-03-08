@@ -36,14 +36,15 @@
                     <legend class="text-bold"></legend>
 
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm ">
                         <label class="control-label col-lg-2">区块链名称</label>
                         <div class="col-lg-10">
-                            <input type="text" name="project_name" id="project_name" class="form-control text-light text-violet"  maxlength="24"  placeholder="请输入链名称" >
+                            <input type="text" name="project_name" id="project_name" class="form-control border-teal text-light text-violet"  maxlength="24"  placeholder="请输入链名称" data-popup="tooltip" data-trigger="focus" title="输入自定义区块链名称">
+{#                            <span class="help-block">Input helper text block</span>#}
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">相关描述</label>
                         <div class="col-lg-10">
                             <textarea rows="5" cols="5" name="project_description" id="project_description" class="form-control text-light text-size-small text-teal" maxlength="512" placeholder="填写链相关描述"></textarea>
@@ -51,7 +52,7 @@
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">链负责人</label>
                         <div class="col-lg-10 text-light">
                             <select name="project_owner" id="project_owner" data-placeholder="请选择..." class="select">
@@ -88,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">开发人员</label>
                         <div class="col-lg-10 text-light">
                             <select multiple="multiple" name="project_developers" id="project_developers" data-placeholder="请选择..." class="select">
@@ -125,7 +126,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">测试人员</label>
                         <div class="col-lg-10 text-light">
                             <select multiple="multiple" name="project_testers" id="project_testers" data-placeholder="请选择..." class="select">
@@ -140,7 +141,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">运维人员</label>
                         <div class="col-lg-10 text-light">
                             <select multiple="multiple" name="project_devops" id="project_devops" data-placeholder="请选择..." class="select">
@@ -155,7 +156,7 @@
                         </div>
                         </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">项目组件</label>
                         <div class="col-lg-10 text-light">
                             <select multiple="multiple" name="project_repos" id="project_repos" data-placeholder="请选择代码仓库" class="select">
@@ -174,6 +175,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-2">链节点数</label>
+                        <div class="col-md-10">
+                            <input class="form-control col-lg-10 text-light" type="number" id="chainNodeNumber" name="chainNodeNumber" value="1" min="1" max="10" step="1" onblur="checkNumber()">
+                        </div>
+                    </div>
+
+{#                    <div class="form-group form-group-sm">#}
+{#                        <label class="control-label col-md-2">添加标签</label>#}
+{#                        <div class="col-md-10">#}
+{#                            <input class="form-control"  type="text" value="Dev,Test" data-role="tagsinput">#}
+{#                        </div>#}
+{#                    </div>#}
 
 
                 </fieldset>
@@ -198,7 +212,15 @@
 
 {% block pagescript %}
 <script src="{{url_for('static',filename='js/pages/form_select2.js')}}"></script>
-
+<script type="text/javascript">
+ function checkNumber(){
+    var inputNumber = document.getElementById('chainNodeNumber').value;
+    if(!/^[-]?[0-9]*\.?[0-9]+(eE?[0-9]+)?$/.test(inputNumber)){
+        alert('Please input a valid number!');
+        return false;
+    }
+}
+</script>
 
 
 {% endblock %}

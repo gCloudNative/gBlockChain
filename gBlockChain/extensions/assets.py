@@ -60,6 +60,12 @@ js_all = Bundle(
         'js/pages/wizard_steps.js',
         'js/pages/form_select2.js',
         'js/pages/table_elements.js',
+        'js/pages/form_input_groups.js',
+        'js/plugins/forms/tags/tagsinput.min.js',
+        'js/plugins/forms/tags/tokenfield.min.js',
+        'js/plugins/ui/prism.min.js',
+        'js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js',
+        'js/pages/form_tags_input.js',
         filters='jsmin', #uglifyjs
         output='gen/packed.js',
         debug=False)
