@@ -23,17 +23,6 @@ app = Flask(__name__, static_folder='static', static_url_path='/static', templat
 app.config.from_pyfile('config.py')
 
 
-# @app.route('/')
-# def index():
-#     return "Hello World!"
-
-# @app.route('/health')
-# def health():
-#     return "OK"
-
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0')
-
 
 @load_module_dynamic(extensions)
 def register_extensions(app, **kw):
@@ -132,6 +121,7 @@ with app.app_context():
 
     # app.redis = current_app.extensions['redis']
     # app.sqlalchemy = current_app.extensions['sqlalchemy']
+    # app.sqlalchemy.create_all()
 
     #from gBlockChain.models import *
     # pprint.pprint( app.sqlalchemy )
