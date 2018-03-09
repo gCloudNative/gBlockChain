@@ -13,9 +13,11 @@ APP_LOG = '/tmp/{}.log'.format(APP_NAME)
 
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '../data/app.db')
 # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@mysql:3306/blockchain?charset=utf8'
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@127.0.0.1:13306/blockchain?charset=utf8'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@127.0.0.1:32769/blockchain?charset=utf8'
 SQLALCHEMY_COMMIT_ON_TEARDOWN=True
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+# SQLALCHEMY_NATIVE_UNICODE=False
+SQLALCHEMY_CODE='utf8'
 SQLALCHEMY_ECHO = False
 
 
