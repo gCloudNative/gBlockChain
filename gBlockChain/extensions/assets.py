@@ -41,6 +41,7 @@ js_all = Bundle(
         'js/plugins/pickers/daterangepicker.js',
         # 'js/plugins/tables/datatables/datatables.min.js',
         'js/plugins/tables/datatables/datatables.js',
+        'js/plugins/tables/datatables/datatables_basic.js',
         # 'js/plugins/tables/datatables/extensions/buttons.min.js',
         'js/plugins/uploaders/fileinput/plugins/purify.min.js',
         'js/plugins/uploaders/fileinput/plugins/sortable.min.js',
