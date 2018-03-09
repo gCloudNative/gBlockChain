@@ -39,7 +39,7 @@
                     <div class="form-group form-group-sm ">
                         <label class="control-label col-lg-2">区块链名称</label>
                         <div class="col-lg-10">
-                            <input type="text" name="project_name" id="project_name" class="form-control border-teal text-light text-violet"  maxlength="24"  placeholder="请输入链名称" data-popup="tooltip" data-trigger="focus" title="输入自定义区块链名称">
+                            <input type="text" name="chain_name" id="chain_name" class="form-control border-teal text-light text-violet"  maxlength="24"  placeholder="请输入链名称" data-popup="tooltip" data-trigger="focus" title="输入自定义区块链名称">
 {#                            <span class="help-block">Input helper text block</span>#}
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">相关描述</label>
                         <div class="col-lg-10">
-                            <textarea rows="5" cols="5" name="project_description" id="project_description" class="form-control text-light text-size-small text-teal" maxlength="512" placeholder="填写链相关描述"></textarea>
+                            <textarea rows="5" cols="5" name="description" id="description" class="form-control text-light text-size-small text-teal" maxlength="512" placeholder="填写链相关描述"></textarea>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">链负责人</label>
                         <div class="col-lg-10 text-light">
-                            <select name="project_owner" id="project_owner" data-placeholder="请选择..." class="select">
+                            <select name="owner" id="owner" data-placeholder="请选择..." class="select">
                                 <option></option>
                                 <optgroup label="开发人员">
                                     <option value="dev1">开发人员1</option>
@@ -92,7 +92,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">开发人员</label>
                         <div class="col-lg-10 text-light">
-                            <select multiple="multiple" name="project_developers" id="project_developers" data-placeholder="请选择..." class="select">
+                            <select multiple="multiple" name="developers" id="developers" data-placeholder="请选择..." class="select">
                                 <option></option>
                                 <optgroup label="开发人员">
                                     <option value="dev1">开发人员1</option>
@@ -100,28 +100,6 @@
                                     <option value="dev3">开发人员3</option>
                                     <option value="dev4">开发人员4</option>
                                 </optgroup>
-
-                                <optgroup label="前端人员">
-                                    <option value="frontend1">前端人员1</option>
-                                    <option value="frontend2">前端人员2</option>
-                                    <option value="frontend3">前端人员3</option>
-                                    <option value="frontend4">前端人员4</option>
-                                </optgroup>
-
-                                <optgroup label="测试人员">
-                                    <option value="test1">测试人员1</option>
-                                    <option value="test2">测试人员2</option>
-                                    <option value="test3">测试人员3</option>
-                                    <option value="test4">测试人员4</option>
-                                </optgroup>
-
-                                <optgroup label="运维人员">
-                                    <option value="devops1">运维人员1</option>
-                                    <option value="devops2">运维人员2</option>
-                                    <option value="devops3">运维人员3</option>
-                                    <option value="devops4">运维人员4</option>
-                                </optgroup>
-
                             </select>
                         </div>
                     </div>
@@ -129,7 +107,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">测试人员</label>
                         <div class="col-lg-10 text-light">
-                            <select multiple="multiple" name="project_testers" id="project_testers" data-placeholder="请选择..." class="select">
+                            <select multiple="multiple" name="testers" id="testers" data-placeholder="请选择..." class="select">
                                 <option></option>
                                 <optgroup label="测试人员">
                                     <option value="test1">测试人员1</option>
@@ -144,7 +122,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">运维人员</label>
                         <div class="col-lg-10 text-light">
-                            <select multiple="multiple" name="project_devops" id="project_devops" data-placeholder="请选择..." class="select">
+                            <select multiple="multiple" name="opsers" id="opsers" data-placeholder="请选择..." class="select">
                                 <option></option>
                                 <optgroup label="运维人员">
                                     <option value="devops1">运维人员1</option>
@@ -159,7 +137,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">项目组件</label>
                         <div class="col-lg-10 text-light">
-                            <select multiple="multiple" name="project_repos" id="project_repos" data-placeholder="请选择代码仓库" class="select">
+                            <select multiple="multiple" name="chain_type" id="chain_type" data-placeholder="请选择代码仓库" class="select">
                                 <option></option>
                                 <optgroup label="超级账本Hyperledger">
                                     <option value="hyperledger">Hyperledger</option>
@@ -178,7 +156,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-md-2">链节点数</label>
                         <div class="col-md-10">
-                            <input class="form-control col-lg-10 text-light" type="number" id="chainNodeNumber" name="chainNodeNumber" value="1" min="1" max="10" step="1" onblur="checkNumber()">
+                            <input class="form-control col-lg-10 text-light" type="number" id="chain_node_number" name="chain_node_number" value="1" min="1" max="10" step="1" onblur="checkNumber()">
                         </div>
                     </div>
 
