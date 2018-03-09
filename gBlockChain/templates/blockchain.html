@@ -1,0 +1,218 @@
+{% extends "_layout.html" %}
+
+{% block title %} {{ pagetitle or config.APP_BRAND }}
+{% endblock %}
+
+
+
+{% block pagecss %}
+{% endblock %}
+
+{% block body %}
+    <!-- Panel horizontal -->
+    <div class="panel panel-flat">
+        <!-- /Panel Head horizontal -->
+        <div class="panel-heading">
+            <h6 class="panel-title">链列表</h6>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /Panel Head horizontal -->
+
+        <!-- /Panel Body horizontal -->
+        <div class="panel-body">
+            <!-- Description -->
+{#						        <p class="content-group-lg"></p>#}
+
+            <div class="table-responsive">
+						<table class="table table-hover table-ms">
+							<thead>
+								<tr class="border-solid">
+									<th>#</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Username</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Eugene</td>
+									<td>Kopyov</td>
+									<td>@Kopyov</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Victoria</td>
+									<td>Baker</td>
+									<td>@Vicky</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>James</td>
+									<td>Alexander</td>
+									<td>@Alex</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+                            								<tr>
+									<td>4</td>
+									<td>Franklin</td>
+									<td>Morrison</td>
+									<td>@Frank</td>
+								</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /basic table -->
+
+        </div>
+        <!-- /Panel Body horizontal -->
+
+    </div>
+    <!-- /Panel horizontal -->
+
+
+{% endblock %}
+
+
+{% block pagescript %}
+<script src="{{url_for('static',filename='js/pages/form_select2.js')}}"></script>
+
+
+
+{% endblock %}
