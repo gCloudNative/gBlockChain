@@ -92,9 +92,10 @@ def view(instance, url, renderer=None, *args, **kwargs):
                     _params = json.loads(request.data)
                     #print( "_params", _params )
                 except ValueError as e:
-                    # _form = request.form
+                    _form = request.form
+                    _params = {k: ",".join(_form.getlist(k)) for k in _form}
                     # _params = {k: _form[k] for k in _form}
-                    _params = None
+                    # _params = None
                     # raise ValidationError(e)
 
                 if isinstance(_params, dict):
@@ -165,7 +166,7 @@ class JSONRPCClient(object):
     def __init__(self, server):
         self.url = 'http://{}'.format(server)
         self.data = {
-            'id': 1,
+            'id': 67,
             'jsonrpc': '2.0',
             'method': '',
             'params': []}
@@ -189,7 +190,7 @@ class JSONRPCClient(object):
 
 def current_username():
     try:
-        username = session.get('CAS_USERNAME', {}).get('username')
+        username = session.get('USERNAME', {}).get('username')
     except RuntimeError:
         username = ""
 
