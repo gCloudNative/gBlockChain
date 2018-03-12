@@ -87,6 +87,17 @@ celerybeat-schedule
 venv/
 ENV/
 
+# project
+gBlockChain/static/gen/
+hosts
+sync.sh
+migrations/
+.idea
+.DS_Store
+
+
+
+
 # Spyder project settings
 .spyderproject
 .spyproject
