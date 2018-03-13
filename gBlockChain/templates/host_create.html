@@ -1,0 +1,151 @@
+{% extends "_layout.html" %}
+
+{% block title %} {{ pagetitle or config.APP_BRAND }}
+{% endblock %}
+
+
+
+{% block pagecss %}
+{% endblock %}
+
+{% block body %}
+    <!-- Panel horizontal -->
+    <div class="panel panel-flat">
+        <!-- /Panel Head horizontal -->
+        <div class="panel-heading">
+            <h6 class="panel-title">新建私链</h6>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /Panel Head horizontal -->
+
+        <!-- /Panel Body horizontal -->
+        <div class="panel-body">
+            <!-- Description -->
+{#						        <p class="content-group-lg"></p>#}
+
+            <!-- Form horizontal -->
+            <form class="form-horizontal" method="post" action="" >
+
+                <fieldset class="content-group">
+                    <legend class="text-bold"></legend>
+
+
+                    <div class="form-group form-group-sm ">
+                        <label class="control-label col-lg-2">机器IP</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="host_ip" id="host_ip" class="form-control border-teal text-light text-violet"  maxlength="24"  placeholder="请输入机器IP" data-popup="tooltip" data-trigger="focus" title="输入机器IP">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm ">
+                        <label class="control-label col-lg-2">API端口</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="docker_port" id="docker_port" type="number" value=2375 class="form-control text-light text-violet" placeholder="请输Docker API端口" >
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm ">
+                        <label class="control-label col-lg-2">cAdvisor端口</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="cAdvisor_port" id="cAdvisor_port" type="number" value=4033 class="form-control text-light text-violet" placeholder="请输cAdvisor端口" >
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-lg-2">相关描述</label>
+                        <div class="col-lg-10">
+                            <textarea rows="5" cols="5" name="description" id="description" class="form-control text-light text-size-small text-teal" maxlength="512" placeholder="填写相关描述"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-lg-2">操作系统</label>
+                        <div class="col-lg-10 text-light">
+                            <select name="owner" id="owner" data-placeholder="请选择..." class="select">
+                                <option></option>
+                                <optgroup label="Linux">
+                                    <option value="centos">CentOS</option>
+                                    <option value="ubuntu">Ubuntu</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-lg-2">节点标签</label>
+                        <div class="col-lg-10 text-light">
+                            <select multiple="multiple" name="chain_type" id="chain_type" data-placeholder="请选择代码仓库" class="select">
+                                <option></option>
+                                <optgroup label="超级账本Hyperledger">
+                                    <option value="hyperledger">Hyperledger</option>
+                                </optgroup>
+                                <optgroup label="以太坊Ethereum">
+                                    <option value="geth">Geth</option>
+                                </optgroup>
+                                <optgroup label="分布式账本Corda">
+                                    <option value="corda">Corda</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="control-label col-md-2">链节点数</label>
+                        <div class="col-md-10">
+                            <input class="form-control col-lg-10 text-light" type="number" id="chain_node_number" name="chain_node_number" value="1" min="1" max="10" step="1" onblur="checkNumber()">
+                        </div>
+                    </div>
+
+{#                    <div class="form-group form-group-sm">#}
+{#                        <label class="control-label col-md-2">添加标签</label>#}
+{#                        <div class="col-md-10">#}
+{#                            <input class="form-control"  type="text" value="Dev,Test" data-role="tagsinput">#}
+{#                        </div>#}
+{#                    </div>#}
+
+
+                </fieldset>
+
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">提交<i class="icon-arrow-right14 position-right"></i></button>
+                </div>
+
+            </form>
+            <!-- /Form horizontal -->
+
+        </div>
+        <!-- /Panel Body horizontal -->
+
+    </div>
+    <!-- /Panel horizontal -->
+
+
+{% endblock %}
+
+
+{% block pagescript %}
+<script src="{{url_for('static',filename='js/pages/form_select2.js')}}"></script>
+<script type="text/javascript">
+ function checkNumber(){
+    var inputNumber = document.getElementById('chainNodeNumber').value;
+    if(!/^[-]?[0-9]*\.?[0-9]+(eE?[0-9]+)?$/.test(inputNumber)){
+        alert('Please input a valid number!');
+        return false;
+    }
+}
+</script>
+
+
+{% endblock %}
