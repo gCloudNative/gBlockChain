@@ -96,7 +96,7 @@ migrations/
 .DS_Store
 get-pip.py
 test_docker.py
-README.md
+README.md.bk
 
 
 
