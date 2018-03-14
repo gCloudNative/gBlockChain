@@ -13,9 +13,9 @@ class User(Model):
     web_url = Column(db.String(128), default="")
     identities = Column(db.Text, default="")
 
-    # def __init__(self, name):
-    #     self.name = name
+    def __init__(self, name):
+        self.name = name
  
-    # def __repr__(self):
-    #     return '<User %r>' % self.name
+    def __repr__(self):
+        return '<User %r>' % self.name
 
