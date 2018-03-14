@@ -13,7 +13,7 @@
     <div class="panel panel-flat">
         <!-- /Panel Head horizontal -->
         <div class="panel-heading">
-            <h6 class="panel-title">新建私链</h6>
+            <h6 class="panel-title">新建主机</h6>
             <div class="heading-elements">
                 <ul class="icons-list">
                     <li><a data-action="collapse"></a></li>
@@ -53,7 +53,7 @@
                     <div class="form-group form-group-sm ">
                         <label class="control-label col-lg-2">cAdvisor端口</label>
                         <div class="col-lg-10">
-                            <input type="text" name="cAdvisor_port" id="cAdvisor_port" type="number" value=4033 class="form-control text-light text-violet" placeholder="请输cAdvisor端口" >
+                            <input type="text" name="cadvisor_port" id="cadvisor_port" type="number" value=4033 class="form-control text-light text-violet" placeholder="请输cAdvisor端口" >
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">操作系统</label>
                         <div class="col-lg-10 text-light">
-                            <select name="owner" id="owner" data-placeholder="请选择..." class="select">
+                            <select name="host_os" id="host_os" data-placeholder="请选择..." class="select">
                                 <option></option>
                                 <optgroup label="Linux">
                                     <option value="centos">CentOS</option>
@@ -84,7 +84,7 @@
                     <div class="form-group form-group-sm">
                         <label class="control-label col-lg-2">节点标签</label>
                         <div class="col-lg-10 text-light">
-                            <select multiple="multiple" name="chain_type" id="chain_type" data-placeholder="请选择代码仓库" class="select">
+                            <select multiple="multiple" name="host_label" id="host_label" data-placeholder="请选择代码仓库" class="select">
                                 <option></option>
                                 <optgroup label="超级账本Hyperledger">
                                     <option value="hyperledger">Hyperledger</option>
@@ -100,12 +100,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group form-group-sm">
-                        <label class="control-label col-md-2">链节点数</label>
-                        <div class="col-md-10">
-                            <input class="form-control col-lg-10 text-light" type="number" id="chain_node_number" name="chain_node_number" value="1" min="1" max="10" step="1" onblur="checkNumber()">
-                        </div>
-                    </div>
+{#                    <div class="form-group form-group-sm">#}
+{#                        <label class="control-label col-md-2">链节点数</label>#}
+{#                        <div class="col-md-10">#}
+{#                            <input class="form-control col-lg-10 text-light" type="number" id="chain_node_number" name="chain_node_number" value="1" min="1" max="10" step="1" onblur="checkNumber()">#}
+{#                        </div>#}
+{#                    </div>#}
 
 {#                    <div class="form-group form-group-sm">#}
 {#                        <label class="control-label col-md-2">添加标签</label>#}

@@ -19,6 +19,7 @@ class Host(Model):
     cadvisor_api_port = Column(db.Integer, default=4033)
 
     description = Column(db.Text, default="")
+    host_label = Column(db.String(32), default="")
 
     cloud_ostype = Column(db.String(32), default="CentOS")
     cloud_vendor = Column(db.String(32), default="")
